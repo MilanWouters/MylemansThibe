@@ -1,0 +1,258 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Basisinstellingen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Hero sectie */
+/* Hero sectie */
+.hero.boomwerken-hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* Background Image with Ken Burns Effect */
+.hero.boomwerken-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Use a high-impact image */
+    background: url('../fotos/snoeien.jpg') center center no-repeat;
+    background-size: cover;
+    z-index: -1;
+    /* Crazy Effect: Ken Burns Animation */
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+/* Dark Overlay for Readability */
+.hero.boomwerken-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    z-index: 0;
+}
+
+/* Ken Burns Keyframes */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.2) translate(-20px, -10px);
+    }
+
+    100% {
+        transform: scale(1.1) translate(20px, 10px);
+    }
+}
+
+.hero.boomwerken-hero h1,
+.hero.boomwerken-hero p {
+    position: relative;
+    z-index: 1;
+    /* Above overlay */
+    opacity: 0;
+    /* For fade-in */
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.hero.boomwerken-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero.boomwerken-hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    line-height: 1.8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content */
+.content {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.boomwerken-section {
+    margin: 80px 0;
+}
+
+.text-img-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+.text-img-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-img-container img {
+    width: 100%;
+    max-width: 500px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.text-img-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.text-img-container div {
+    max-width: 500px;
+}
+
+.text-img-container div h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2f4f2f;
+}
+
+.text-img-container div p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Animaties */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-fade.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.animate-fade.delay-2 {
+    animation-delay: 1s;
+}
+
+.animate-fade.delay-3 {
+    animation-delay: 1.5s;
+}
+
+.animate-fade.delay-4 {
+    animation-delay: 2s;
+}
+
+.animate-zoom {
+    animation: zoomIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-zoom.delay-4 {
+    animation-delay: 2s;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .text-img-container {
+        flex-direction: column;
+    }
+
+    .text-img-container.reverse {
+        flex-direction: column;
+    }
+
+    .text-img-container img,
+    .text-img-container div {
+        max-width: 100%;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 900px) {
+    .text-img-container {
+        flex-direction: column;
+    }
+
+    .text-img-container img {
+        order: -1;
+    }
+
+    .text-img-container div {
+        order: 0;
+    }
+
+    .text-img-container img,
+    .text-img-container div {
+        max-width: 100%;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+    }
+}

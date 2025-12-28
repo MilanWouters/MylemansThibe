@@ -1,0 +1,446 @@
+/* Google Font */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Header + Hero */
+.hero {}
+
+
+
+
+
+
+.btn {
+    background-color: white;
+    color: #2E7D32;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #c8e6c9;
+    transform: scale(1.05);
+}
+
+/* Section features */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.img-placeholder {
+    height: 180px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .hero-flex {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+}
+
+
+
+.left-img,
+.right-img {
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+
+.left-img {
+    transform: translateX(-40px);
+    /* schuift naar links */
+}
+
+.right-img {
+    transform: translateX(40px);
+    /* schuift naar rechts */
+}
+
+.hero {
+    min-height: 100vh;
+    /* neemt minstens heel scherm */
+    height: auto;
+    /* maar kan groter worden als tekst/foto meer plaats nodig hebben */
+    padding: 40px 20px;
+    /* ruimte rondom */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        /* laat los op mobiel */
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        /* tekst en foto onder elkaar */
+        gap: 20px;
+    }
+
+    .hero-text,
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 15px;
+        height: auto;
+        /* laat de hero groeien met de content */
+        min-height: auto;
+        /* geen minimale hoogte */
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+        /* kleiner op mobiel */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        /* kleiner knopje */
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsief: op kleinere schermen wordt het een kolom */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image,
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+}
+
+
+.btn {
+    background-color: white;
+    color: #2e7d32;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b2ffb2;
+    color: #1c4e1c;
+}
+
+
+
+
+
+
+
+
+
+/* Logo link en afbeelding */
+
+
+
+
+
+
+.feature-img {
+    width: 100%;
+    /* Zorgt dat de afbeelding de breedte van de card vult */
+    height: 200px;
+    /* Of een hoogte die je mooi vindt */
+    object-fit: cover;
+    /* Houdt de afbeelding proportioneel en vult het kader netjes */
+    border-radius: 8px;
+    /* Maken het iets ronder en professioneler */
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Eventueel hover-effect */
+.feature-img:hover {
+    transform: scale(1.05);
+}
+
+/* Professional Hero Section */
+.hero {
+    min-height: 90vh;
+    /* Lighter gradient so Thibe is visible in the background */
+    background: linear-gradient(135deg, rgba(20, 50, 20, 0.4), rgba(46, 125, 50, 0.2)), url('../fotos/thibewerk.jpeg');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    position: relative;
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    width: 100%;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 650px;
+    text-align: left;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    animation: slideIn 1s ease-out;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 450px;
+    position: relative;
+    animation: fadeIn 1.5s ease-out;
+    margin-top: 100px;
+    /* Slightly adjusted up */
+    margin-left: -50px;
+    transform: none;
+    /* Straighten the image */
+}
+
+/* --- Crazy Visual Effects --- */
+
+/* 1. Slow Background Pan/Zoom */
+.hero {
+    /* Animation removed per user request */
+    background-position: center top;
+}
+
+/* 2. Floating Image Effect */
+.hero-image img {
+    /* Animation removed per user request */
+    /* Other styles remain */
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease;
+}
+
+/* 3. Button Pulse Glow */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.btn {
+    animation: pulse-glow 2s infinite;
+}
+
+/* 4. Scroll Reveal Classes (for JS) */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 968px) {
+    .hero {
+        min-height: auto;
+        padding: 6rem 1.5rem 4rem;
+        animation: none;
+        /* Disable heavy background anim on mobile */
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding: 0;
+        /* Remove padding on mobile */
+        background: none;
+        /* Cleaner look */
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        width: 80%;
+        margin: 0 auto;
+        transform: none;
+        /* Reset custom positioning */
+        animation: float 6s ease-in-out infinite;
+        /* Keep float */
+    }
+
+    .hero-image img {
+        transform: none !important;
+        /* Force straight image on mobile */
+        animation: none;
+        /* Remove complex transform anim */
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Tuinwerken Mylemans</title>
+    <link rel="icon" href="fotos/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="fotos/favicon.ico">
+    <link rel="stylesheet" href="css/samen.css">
+    <link rel="stylesheet" href="css/contact.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="fotos/logo.jpg" alt="Tuinwerken Mylemans logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tuinaanleg.html">Tuinaanleg</a></li>
+            <li><a href="tuinonderhoud.html">Tuinonderhoud</a></li>
+            <li><a href="boomwerken.html">Boomverzorging</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero-section">
+        <h1>Neem Contact op</h1>
+        <p>We staan klaar om jouw tuinproject te realiseren. Bel ons, mail ons of gebruik het formulier hieronder.</p>
+    </div>
+
+
+
+    <main class="contact-wrapper">
+
+        <section class="contact-info">
+            <div class="info-box">
+                <h2>Contactgegevens</h2>
+                <p><strong>📞 Telefoon:</strong> <a href="tel:+32474192092">+32 474 19 20 92</a></p>
+                <p><strong>📧 E-mail:</strong> <a
+                        href="mailto:tuinwerken.mylemans@gmail.com">tuinwerken.mylemans@gmail.com</a></p>
+                <p><strong>📍 Adres:</strong> Wommelgemsesteenweg 29, 2531 Vremde</p>
+                <!--      <p><strong>🕒 Openingsuren:</strong><br>-->
+                <!--        Ma - Vr: 08:00 - 18:00<br>-->
+                <!--        Za: 09:00 - 13:00</p>-->
+            </div>
+            <div class="map-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2501.2372319818114!2d4.523232376863416!3d51.17785033472421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f962dd3d283b%3A0x9094ec6b907e6ca5!2sWommelgemsesteenweg%2029%2C%202531%20Boechout!5e0!3m2!1snl!2sbe!4v1756209848472!5m2!1snl!2sbe"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Stel je vraag</h2>
+            <form id="contact-form" action="https://formspree.io/f/mzzabvka" method="POST">
+                <div class="form-grid">
+                    <div>
+                        <label for="name">Naam*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">E-mailadres*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">Telefoonnummer</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div>
+                        <label for="subject">Onderwerp*</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="full-width">
+                        <label for="message">Bericht*</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Verzend Bericht</button>
+            </form>
+
+            <!-- Melding hier -->
+            <div id="form-status" style="margin-top: 20px; font-weight: bold;"></div>
+        </section>
+
+        <script>
+            const form = document.getElementById("contact-form");
+            const statun            mentById("form-status");
+
+            form.addEventL            "submit", async (e) => {
+                e.preventDefault(); //             dat de pagina herlaadt
+
+                const data = new FormData(                   try {
+        c                e = await fetch(form.action, {
+                    method                    
+          body: daa                    aders: {
+                        'Accept': 'application/js                    });
+
+                         nse.ok) {
+                        status.style.color = "gr                            atus.innerHTML = "✅ B                             is succesvo                                   form.reset(); // formulier leegmake                         {
+                        tyle.color = "red"; innerHTML = "❌ Er is iets misgegaan. Probeer                             ";
+                    }
+                } catch (error) {
+                    status.style.color = "red";
+                    status.innerHTML = "❌                            getreden bij e                             }
+                });
+        </script>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Over Tuinwerken Mylemans</h3>
+                <p>Vakmanschap in tuinaanleg, tuinonderhoud en boomwerken - met oog voor detail en passie voor groen</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Adres: Wommelgemsesteenweg 29, 2531 Vremde</p>
+                <p>Tel: <a href="tel:+32474192092">+32 474 19 20 92</a></p>
+                <p>Email: <a href="mailto:tuinwerken.mylemans@gmail.com">tuinwerken.mylemans@gmail.com</a></p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Volg ons</h3>
+                <ul class="social-list">
+                    <li><a href="https://www.facebook.com/tuinwerkenmylemans" target="_blank" rel="noopener"><i
+                                class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/tuinwerken_mylemans?igsh=MTN3aXM4MW90YzNicg=="
+                            target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <!--                <li><a href="https://www.linkedin.com/company/tuinwerkenmylemans" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>-->
+                    <!--                <li><a href="https://twitter.com/tuinwerkenmylemans" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

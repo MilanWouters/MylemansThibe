@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tuinwerken Mylemans - Professionele Tuinprojecten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="fotos/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="fotos/favicon.ico">
+    <link rel="stylesheet" href="css/samen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* Algemene resets en body */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f9fdf8;
+            color: #2f4f4f;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2e7d32;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #4caf50;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background-image: url('fotos/onderhoud5.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Gradient Overlay using pseudo-element */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(20, 50, 20, 0.8), rgba(46, 125, 50, 0.6));
+            z-index: 1;
+        }
+
+        /* Ensure content is above overlay */
+        .hero div {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 20px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            animation: slideInDown 1.5s ease forwards;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-top: 15px;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2.5s ease forwards;
+        }
+
+        /* Animaties voor hero */
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Diensten sectie */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            flex: 1 1 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+            padding: 25px 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+        }
+
+        .service-card h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: inside disc;
+            color: #4a6f4a;
+            font-weight: 300;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        /* Projecten sectie */
+        .projects {
+            margin-bottom: 80px;
+        }
+
+        .projects h2 {
+            color: #2e7d32;
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(46, 125, 50, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.25);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-content h3 {
+            margin: 0 0 10px;
+            color: #2e7d32;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .project-content p {
+            color: #4a6f4a;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+
+        /* Button */
+        .btn-primary {
+            background-color: #388e3c;
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            border-radius: 40px;
+            margin: 30px auto 0;
+            display: block;
+            cursor: pointer;
+            box-shadow: 0 0 18px #388e3c;
+            transition: box-shadow 0.3s ease;
+            font-weight: 600;
+            width: max-content;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 30px #4caf50;
+        }
+
+        /* Responsive */
+        @media (max-width: 720px) {
+            .services {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem 1rem;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 250px;
+            /* zelfde hoogte voor alle foto's */
+            object-fit: cover;
+            /* vult de ruimte en behoudt de aspect ratio */
+            display: block;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            flex: 1 1 23%;
+            /* 4 naast elkaar op grote schermen */
+            min-width: 250px;
+            /* zorgt dat ze niet te klein worden op medium schermen */
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+            padding: 25px 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+    </style>
+
+</head>
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="fotos/logo.jpg" alt="Tuinwerken Mylemans logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tuinaanleg.html" class="active">Tuinaanleg</a></li>
+            <li><a href="tuinonderhoud.html">Tuinonderhoud</a></li>
+            <li><a href="boomwerken.html">Boomverzorging</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+
+    <!-- Hero sectie -->
+    <section class="hero" role="img" aria-label="Prachtige tuin achtergrondfoto - plaats hier jouw foto">
+        <div>
+            <h1>Het creëren van uw droomtuin!</h1>
+
+        </div>
+    </section>
+
+    <!-- Container -->
+    <main class="container">
+
+        <!-- Diensten -->
+        <section class="services" aria-label="Onze diensten">
+            <article class="service-card" tabindex="0">
+                <h3>Grondvoorbereiding</h3>
+                <ul>
+                    <li>Spitten, frezen en egaliseren</li>
+                    <li>Drainage en afwatering</li>
+                    <li>Compost en teelaarde aanbrengen</li>
+                </ul>
+            </article>
+            <article class="service-card" tabindex="0">
+                <h3>Gazonaanleg</h3>
+                <ul>
+                    <li>Natuurlijk (kruiden) gazon zaaien</li>
+                    <li>Graszoden leggen voor direct resultaat</li>
+                    <li>Onderhoud en bemesting</li>
+                </ul>
+            </article>
+            <article class="service-card" tabindex="0">
+                <h3>Aanplantingen</h3>
+                <ul>
+                    <li>Het plaatsen van aanplantingen op maat</li>
+                    <li>Afwerken met boomschors of hakselhout tussen de planten</li>
+                </ul>
+            </article>
+            <!-- Nieuw vakje voor Afsluitingen -->
+            <article class="service-card" tabindex="0">
+                <h3>Afsluitingen</h3>
+                <ul>
+                    <li>Afsluitingen op maat</li>
+                    <li>Houten, metalen of natuurlijke afscheidingen</li>
+                    <li>Functioneel en esthetisch afgestemd op uw tuin</li>
+                </ul>
+            </article>
+        </section>
+
+        <!--    &lt;!&ndash; Projecten &ndash;&gt;-->
+        <!--    <section class="projects" aria-label="Recente tuinprojecten">-->
+        <!--        <h2>Onze recente projecten</h2>-->
+        <!--        <div class="project-grid">-->
+
+        <!--            <article class="project-card" tabindex="0" aria-label="Project tuin met moderne vijver en beplanting">-->
+        <!--                <img src="fotos/aanleg1.jpeg" alt="Moderne tuin met vijver en beplanting" class="project-image" />-->
+        <!--                <div class="project-content">-->
+        <!--                    <h3>Moderne vijvertuin</h3>-->
+        <!--                    <p>Een rustige, moderne tuin met een stijlvolle vijver en onderhoudsvriendelijke beplanting.</p>-->
+        <!--                </div>-->
+        <!--            </article>-->
+
+        <!--            <article class="project-card" tabindex="0" aria-label="Project landelijke tuin met natuurlijke materialen">-->
+        <!--                <img src="fotos/aanleg2.jpeg" alt="Landelijke tuin met houten terrassen" class="project-image" />-->
+        <!--                <div class="project-content">-->
+        <!--                    <h3>Landelijke tuin</h3>-->
+        <!--                    <p>Warme, landelijke uitstraling met houten terrassen en natuurlijke beplanting voor gezelligheid.</p>-->
+        <!--                </div>-->
+        <!--            </article>-->
+
+        <!--            <article class="project-card" tabindex="0" aria-label="Project kleine stadstuin met slimme ruimtebenutting">-->
+        <!--                <img src="fotos/aanleg3.jpeg" alt="Kleine stadstuin met slimme indeling" class="project-image" />-->
+        <!--                <div class="project-content">-->
+        <!--                    <h3>Kleine stadstuin</h3>-->
+        <!--                    <p>Slimme en efficiënte ruimtebenutting met groene accenten en moderne elementen in een stadstuin.</p>-->
+        <!--                </div>-->
+        <!--            </article>-->
+
+        <!--        </div>-->
+
+        <!--    </section>-->
+        <!-- Fotosectie -->
+        <section class="photo-strip" aria-label="Tuinwerken in beeld">
+            <div class="photo-grid">
+                <img src="fotos/aanleg.jpg" alt="Tuinbeeld 1" />
+                <img src="fotos/aanleg2.jpg" alt="Tuinbeeld 2" />
+                <img src="fotos/aanleg3.jpg" alt="Tuinbeeld 3" />
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Over Tuinwerken Mylemans</h3>
+                <p>Vakmanschap in tuinaanleg, tuinonderhoud en boomwerken - met oog voor detail en passie voor groen</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Adres: Wommelgemsesteenweg 29, 2531 Vremde</p>
+                <p>Tel: <a href="tel:+32474192092">+32 474 19 20 92</a></p>
+                <p>Email: <a href="mailto:tuinwerken.mylemans@gmail.com">tuinwerken.mylemans@gmail.com</a></p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Volg ons</h3>
+                <ul class="social-list">
+                    <li><a href="https://www.facebook.com/tuinwerkenmylemans" target="_blank" rel="noopener"><i
+                                class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/tuinwerken_mylemans?igsh=MTN3aXM4MW90YzNicg=="
+                            target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <!--                <li><a href="https://www.linkedin.com/company/tuinwerkenmylemans" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>-->
+                    <!--                <li><a href="https://twitter.com/tuinwerkenmylemans" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

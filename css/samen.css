@@ -1,0 +1,295 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Global Variables */
+:root {
+    --primary-green: #2E7D32;
+    --dark-green: #1B5E20;
+    --light-green: #4CAF50;
+    --accent-green: #81C784;
+    --bg-light: #f9fdf8;
+    --text-dark: #263238;
+    --text-light: #546E7A;
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+    width: 100%;
+    /* 100% ipv 100vw om scrollbar issues te voorkomen */
+    box-sizing: border-box;
+    /* Zorg dat padding binnen breedte blijft */
+    padding: 10px 40px;
+    /* Ruimte links en rechts */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    /* Witte achtergrond, pas aan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    /* Vast bovenaan als je wilt */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    /* ruimte tussen links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Elke link */
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    /* standaard kleur */
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover en actieve link */
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: var(--primary-green);
+    /* was blauwe kleur, nu primary */
+    color: var(--white);
+}
+
+/* Animatie onderstreep bij hover */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #C8E6C9;
+    transition: width 0.3s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Actieve link styling extra */
+.nav-links .active {
+    font-weight: 700;
+    color: #A5D6A7;
+}
+
+
+
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px;
+    /* pas aan naar gewenste hoogte */
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+
+.footer {
+    background-color: #2f4f2f;
+    color: #d9d9d9;
+    padding: 25px 40px 15px 40px;
+    /* iets meer padding op links/rechts */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+    line-height: 1.4;
+    margin-top: 50px;
+    box-shadow: inset 0 6px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    /* → breder maken */
+    margin: 0 auto;
+    padding: 0 60px;
+    /* → meer ruimte links/rechts */
+    box-sizing: border-box;
+    gap: 40px;
+    /* → extra ruimte tussen kolommen */
+}
+
+.footer-about,
+.footer-contact,
+.footer-social {
+    flex: 1;
+    min-width: 0;
+    padding: 0 50px;
+}
+
+
+
+
+.footer h3 {
+    color: #a2d149;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+.footer a {
+    color: #d9d9d9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:focus {
+    color: #a2d149;
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-list li {
+    margin-bottom: 10px;
+}
+
+.social-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.social-list i {
+    font-size: 1.1em;
+    color: #a2d149;
+    transition: transform 0.3s ease;
+}
+
+.social-list a:hover i,
+.social-list a:focus i {
+    transform: scale(1.15);
+    color: #e0f2b7;
+}
+
+.footer-bottom {
+    border-top: 1px solid #456633;
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    padding-top: 15px;
+    font-size: 0.85em;
+    color: #a6a6a6;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .footer-about,
+    .footer-contact,
+    .footer-social {
+        flex: 1 1 100%;
+        text-align: center;
+        min-width: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        /* niet meer fixed */
+        flex-direction: column;
+        /* logo boven, links eronder */
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    /* Push de rest van de pagina naar beneden als navbar fixed blijft */
+
+}
+
+/* Optioneel: als je fixed wilt houden */
+
+
+/* Responsive navbar voor kleine schermen */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        /* logo boven, links eronder */
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    body {
+        padding-top: 0;
+        /* op mobiel niet nodig als navbar relatief is */
+    }
+}
