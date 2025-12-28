@@ -237,59 +237,118 @@
     }
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-green);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive navbar voor mobiel */
 @media (max-width: 768px) {
     .navbar {
-        position: relative;
-        /* niet meer fixed */
-        flex-direction: column;
-        /* logo boven, links eronder */
+        position: fixed;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: 15px 20px;
         width: 100%;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(180deg, #ffffff 0%, #f9fdf8 100%);
         flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
-    }
-
-    .nav-links li a {
-        font-size: 1.1rem;
-        padding: 10px 15px;
-        text-align: center;
-    }
-
-    /* Push de rest van de pagina naar beneden als navbar fixed blijft */
-
-}
-
-/* Optioneel: als je fixed wilt houden */
-
-
-/* Responsive navbar voor kleine schermen */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        /* logo boven, links eronder */
+        justify-content: flex-start;
         align-items: center;
-        padding: 15px 20px;
+        padding-top: 100px;
+        gap: 0;
+        margin: 0;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+        transition: right 0.3s ease;
+        z-index: 1000;
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
     }
 
     .nav-links li a {
-        font-size: 1.1rem;
-        padding: 10px 15px;
+        display: block;
+        font-size: 1.15rem;
+        padding: 18px 20px;
         text-align: center;
+        width: 100%;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+        background-color: var(--primary-green);
+        color: #ffffff;
+    }
+
+    /* Overlay when menu is open */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .nav-overlay.active {
+        display: block;
     }
 
     body {
-        padding-top: 0;
-        /* op mobiel niet nodig als navbar relatief is */
+        padding-top: 80px;
     }
 }

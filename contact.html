@@ -4,23 +4,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Tuinwerken Mylemans</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Contact | Tuinwerken Mylemans - Vraag een Offerte</title>
+    <meta name="description"
+        content="Neem contact op met Tuinwerken Mylemans voor een vrijblijvende offerte. Tuinaanleg, onderhoud en boomwerken in Vremde en regio Antwerpen.">
+    <meta name="keywords"
+        content="contact tuinwerken, offerte tuin, hovenier contacteren, Vremde, Boechout, Antwerpen, tuinwerken mylemans">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="ejG20nU1MnpsWAwPMANIuZfoScorD5uYU2liiviA9pQ">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tuinwerkenmylemans.be/contact.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tuinwerkenmylemans.be/contact.html">
+    <meta property="og:title" content="Contact | Tuinwerken Mylemans">
+    <meta property="og:description" content="Vraag een vrijblijvende offerte aan voor uw tuinproject.">
+    <meta property="og:image" content="https://tuinwerkenmylemans.be/fotos/logo.jpg">
+
+    <!-- Fonts & Styles -->
     <link rel="icon" href="fotos/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="fotos/favicon.ico">
     <link rel="stylesheet" href="css/samen.css">
     <link rel="stylesheet" href="css/contact.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
 
 
+    <div class="nav-overlay"></div>
     <nav class="navbar">
         <a href="index.html" class="logo-link">
             <img src="fotos/logo.jpg" alt="Tuinwerken Mylemans logo" class="logo-img" />
         </a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="tuinaanleg.html">Tuinaanleg</a></li>
@@ -29,6 +57,7 @@
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
+    <script src="javascript/navbar.js"></script>
     <div class="hero-section">
         <h1>Neem Contact op</h1>
         <p>We staan klaar om jouw tuinproject te realiseren. Bel ons, mail ons of gebruik het formulier hieronder.</p>
@@ -92,25 +121,35 @@
 
         <script>
             const form = document.getElementById("contact-form");
-            const statun            mentById("form-status");
+            const status = document.getElementById("form-status");
 
-            form.addEventL            "submit", async (e) => {
-                e.preventDefault(); //             dat de pagina herlaadt
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
 
-                const data = new FormData(                   try {
-        c                e = await fetch(form.action, {
-                    method                    
-          body: daa                    aders: {
-                        'Accept': 'application/js                    });
+                const data = new FormData(form);
 
-                         nse.ok) {
-                        status.style.color = "gr                            atus.innerHTML = "✅ B                             is succesvo                                   form.reset(); // formulier leegmake                         {
-                        tyle.color = "red"; innerHTML = "❌ Er is iets misgegaan. Probeer                             ";
+                try {
+                    const response = await fetch(form.action, {
+                        method: "POST",
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        status.style.color = "green";
+                        status.innerHTML = "✅ Bericht is succesvol verzonden!";
+                        form.reset();
+                    } else {
+                        status.style.color = "red";
+                        status.innerHTML = "❌ Er is iets misgegaan. Probeer opnieuw.";
                     }
                 } catch (error) {
                     status.style.color = "red";
-                    status.innerHTML = "❌                            getreden bij e                             }
-                });
+                    status.innerHTML = "❌ Er is een fout opgetreden bij het verzenden.";
+                }
+            });
         </script>
 
 

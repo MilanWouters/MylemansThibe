@@ -1,0 +1,12 @@
+# Robots.txt voor Tuinwerken Mylemans
+# https://tuinwerkenmylemans.be
+
+User-agent: *
+Allow: /
+
+# Sitemap locatie
+Sitemap: https://tuinwerkenmylemans.be/sitemap.xml
+
+# Blokkeer alleen niet-relevante bestanden
+Disallow: /.git/
+Disallow: /.idea/
