@@ -142,13 +142,148 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>Over Tuinwerken Mylemans</h3>
-                <p>Vakmanschap in tuinaanleg, tuinonderhoud en boomwerken - met oog voor detail en passie voor groen</p>
+    <!-- Google Reviews Carousel Section -->
+    <section class="google-reviews">
+        <div class="section-header">
+            <h2>Wat klanten over ons zeggen</h2>
+            <p>Ontdek waarom klanten kiezen voor Tuinwerken Mylemans</p>
+        </div>
+
+        <div class="reviews-carousel">
+            <button class="carousel-btn prev-btn" aria-label="Vorige review">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="reviews-slider">
+                <!-- Review 1 - Mxlan -->
+                <div class="review-card active">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Ik ben heel tevreden over het werk dat hier gedaan is. Alles werd netjes
+                        uitgevoerd en volledig volgens afspraak. Er werd goed meegedacht en alles is proper
+                        achtergelaten."</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Milan</span>
+                    </div>
+                    <div class="review-source">
+                        <i class="fab fa-google"></i> Google Review
+                    </div>
+                </div>
+
+                <!-- Review 2 - Brent B -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Heel tevreden van Thibe als onderaannemer. Hij is gedreven, punctueel en
+                        leergierig. Leuk samenwerken!"</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Brent B.</span>
+                    </div>
+                    <div class="review-source">
+                        <i class="fab fa-google"></i> Google Review
+                    </div>
+                </div>
+
+                <!-- Review 3 - Isabelle Haenen -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Harde werker met veel motivatie. Alles proper achter gelaten. Super
+                        tevreden!!"</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Isabelle Haenen</span>
+                    </div>
+                    <div class="review-source">
+                        <i class="fab fa-google"></i> Google Review
+                    </div>
+                </div>
+
+                <!-- Review 4 - Sanne Tielemans -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Vriendelijk en professioneel. Komt alle afspraken na en werkt alles netjes
+                        af."</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Sanne Tielemans</span>
+                    </div>
+                    <div class="review-source">
+                        <i class="fab fa-google"></i> Google Review
+                    </div>
+                </div>
             </div>
 
+            <button class="carousel-btn next-btn" aria-label="Volgende review">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="carousel-dots"></div>
+
+        <a href="https://www.google.com/search?q=Tuinwerken+Mylemans+Vremde" target="_blank" rel="noopener noreferrer"
+            class="btn-google-reviews">
+            <i class="fab fa-google"></i>
+            Bekijk alle reviews op Google
+        </a>
+    </section>
+
+    <script>
+        // Reviews Carousel
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.review-card');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            let currentIndex = 0;
+
+            // Create dots
+            cards.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function updateCarousel() {
+                cards.forEach((card, index) => {
+                    card.classList.remove('active', 'prev', 'next');
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                    }
+                });
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                updateCarousel();
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Auto-play
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
             <div class="footer-contact">
                 <h3>Contact</h3>
                 <p>Adres: Wommelgemsesteenweg 29, 2531 Vremde</p>
@@ -163,17 +298,18 @@
                                 class="fab fa-facebook-f"></i> Facebook</a></li>
                     <li><a href="https://www.instagram.com/tuinwerken_mylemans?igsh=MTN3aXM4MW90YzNicg=="
                             target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <!--                <li><a href="https://www.linkedin.com/company/tuinwerkenmylemans" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>-->
-                    <!--                <li><a href="https://twitter.com/tuinwerkenmylemans" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>-->
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+            <p class="website-credits">Website gemaakt door <a href="https://milanwouters.be" target="_blank"
+                    rel="noopener">Milan Wouters</a> & <a href="https://raoulbuffels.be" target="_blank"
+                    rel="noopener">Raoul Buffels</a></p>
         </div>
     </footer>
 
 </body>
 
-</html>
+</html>smal
