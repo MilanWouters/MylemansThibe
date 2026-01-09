@@ -322,6 +322,8 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Ga naar hoofdinhoud</a>
+    
     <div class="nav-overlay"></div>
     <nav class="navbar">
         <a href="index.html" class="logo-link">
@@ -344,6 +346,7 @@
 
 
     <!-- Hero sectie -->
+    <main id="main-content">
     <section class="hero" role="img" aria-label="Prachtige tuin achtergrondfoto - plaats hier jouw foto">
         <div>
             <h1>Het creëren van uw droomtuin!</h1>
@@ -432,6 +435,7 @@
         </section>
 
     </main>
+    </main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
@@ -461,8 +465,33 @@
 
         <div class="footer-bottom">
             <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+            <p><a href="privacy.html" style="color: #a2d149; text-decoration: underline;">Privacy Policy</a></p>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <p>Wij gebruiken cookies om uw ervaring op onze website te verbeteren. Door verder te gaan, gaat u akkoord met ons gebruik van cookies. <a href="privacy.html">Lees meer</a></p>
+        </div>
+        <div class="cookie-consent-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accepteren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Weigeren</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/32474192092?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20tuinaanleg"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="javascript/common.js"></script>
 </body>
 
 </html>
