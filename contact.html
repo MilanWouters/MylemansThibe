@@ -38,6 +38,7 @@
 
 <body>
 
+    <a href="#main-content" class="skip-to-content">Ga naar hoofdinhoud</a>
 
     <div class="nav-overlay"></div>
     <nav class="navbar">
@@ -58,6 +59,8 @@
         </ul>
     </nav>
     <script src="javascript/navbar.js"></script>
+
+    <main id="main-content">
     <div class="hero-section">
         <h1>Neem Contact op</h1>
         <p>We staan klaar om jouw tuinproject te realiseren. Bel ons, mail ons of gebruik het formulier hieronder.</p>
@@ -94,37 +97,114 @@
                     <div>
                         <label for="name">Naam*</label>
                         <input type="text" id="name" name="name" required>
+                        <span class="form-error" id="name-error">Gelieve uw naam in te vullen</span>
                     </div>
                     <div>
                         <label for="email">E-mailadres*</label>
                         <input type="email" id="email" name="email" required>
+                        <span class="form-error" id="email-error">Gelieve een geldig e-mailadres in te vullen</span>
                     </div>
                     <div>
                         <label for="phone">Telefoonnummer</label>
                         <input type="tel" id="phone" name="phone">
+                        <span class="form-error" id="phone-error">Gelieve een geldig telefoonnummer in te vullen</span>
                     </div>
                     <div>
                         <label for="subject">Onderwerp*</label>
                         <input type="text" id="subject" name="subject" required>
+                        <span class="form-error" id="subject-error">Gelieve een onderwerp in te vullen</span>
                     </div>
                     <div class="full-width">
                         <label for="message">Bericht*</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
+                        <span class="form-error" id="message-error">Gelieve uw bericht in te vullen</span>
                     </div>
                 </div>
                 <button type="submit" class="submit-btn">Verzend Bericht</button>
             </form>
 
             <!-- Melding hier -->
-            <div id="form-status" style="margin-top: 20px; font-weight: bold;"></div>
+            <div id="form-status"></div>
         </section>
 
         <script>
             const form = document.getElementById("contact-form");
             const status = document.getElementById("form-status");
+            const submitBtn = form.querySelector('.submit-btn');
+
+            // Client-side validation
+            function validateForm() {
+                let isValid = true;
+                
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const subject = document.getElementById('subject');
+                const message = document.getElementById('message');
+
+                // Reset errors
+                document.querySelectorAll('.form-error').forEach(error => {
+                    error.classList.remove('show');
+                });
+                document.querySelectorAll('input, textarea').forEach(input => {
+                    input.classList.remove('error', 'success');
+                });
+
+                // Validate name
+                if (!name.value.trim()) {
+                    document.getElementById('name-error').classList.add('show');
+                    name.classList.add('error');
+                    isValid = false;
+                } else {
+                    name.classList.add('success');
+                }
+
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email.value.trim() || !emailRegex.test(email.value)) {
+                    document.getElementById('email-error').classList.add('show');
+                    email.classList.add('error');
+                    isValid = false;
+                } else {
+                    email.classList.add('success');
+                }
+
+                // Validate subject
+                if (!subject.value.trim()) {
+                    document.getElementById('subject-error').classList.add('show');
+                    subject.classList.add('error');
+                    isValid = false;
+                } else {
+                    subject.classList.add('success');
+                }
+
+                // Validate message
+                if (!message.value.trim()) {
+                    document.getElementById('message-error').classList.add('show');
+                    message.classList.add('error');
+                    isValid = false;
+                } else {
+                    message.classList.add('success');
+                }
+
+                return isValid;
+            }
 
             form.addEventListener("submit", async (e) => {
                 e.preventDefault();
+
+                // Validate form
+                if (!validateForm()) {
+                    status.className = 'error';
+                    status.innerHTML = "❌ Gelieve alle verplichte velden correct in te vullen.";
+                    return;
+                }
+
+                // Show loading state
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Verzenden...';
+                status.className = '';
+                status.innerHTML = '';
 
                 const data = new FormData(form);
 
@@ -138,16 +218,25 @@
                     });
 
                     if (response.ok) {
-                        status.style.color = "green";
-                        status.innerHTML = "✅ Bericht is succesvol verzonden!";
+                        status.className = 'success';
+                        status.innerHTML = "✅ Bedankt! Uw bericht is succesvol verzonden. We nemen zo snel mogelijk contact met u op.";
                         form.reset();
+                        // Reset validation styling
+                        document.querySelectorAll('input, textarea').forEach(input => {
+                            input.classList.remove('error', 'success');
+                        });
                     } else {
-                        status.style.color = "red";
-                        status.innerHTML = "❌ Er is iets misgegaan. Probeer opnieuw.";
+                        status.className = 'error';
+                        status.innerHTML = "❌ Er is iets misgegaan. Probeer het later opnieuw of neem telefonisch contact op.";
                     }
                 } catch (error) {
-                    status.style.color = "red";
-                    status.innerHTML = "❌ Er is een fout opgetreden bij het verzenden.";
+                    status.className = 'error';
+                    status.innerHTML = "❌ Er is een fout opgetreden bij het verzenden. Controleer uw internetverbinding.";
+                } finally {
+                    // Remove loading state
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Verzend Bericht';
                 }
             });
         </script>
@@ -184,8 +273,72 @@
 
         <div class="footer-bottom">
             <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+            <p><a href="privacy.html" style="color: #a2d149; text-decoration: underline;">Privacy Policy</a></p>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <p>Wij gebruiken cookies om uw ervaring op onze website te verbeteren. Door verder te gaan, gaat u akkoord met ons gebruik van cookies. <a href="privacy.html">Lees meer</a></p>
+        </div>
+        <div class="cookie-consent-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accepteren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Weigeren</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/32474192092?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20jullie%20tuinwerken%20diensten"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Cookie Consent
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        // Check if user has already made a choice
+        window.addEventListener('DOMContentLoaded', () => {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        });
+    </script>
 
 
 </body>
