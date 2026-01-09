@@ -86,6 +86,8 @@
 
 <body>
 
+    <a href="#main-content" class="skip-to-content">Ga naar hoofdinhoud</a>
+
     <div class="nav-overlay"></div>
     <nav class="navbar">
         <a href="index.html" class="logo-link">
@@ -106,6 +108,7 @@
     </nav>
     <script src="javascript/navbar.js"></script>
 
+    <main id="main-content">
     <header class="hero">
         <div class="hero-content">
             <div class="hero-image">
@@ -121,24 +124,59 @@
 
     <section class="features">
         <div class="feature-card fade-in">
-            <img src="fotos/aanleg2.jpg" alt="Boomwerken" class="feature-img" />
+            <img src="fotos/aanleg2.jpg" alt="Boomwerken" class="feature-img" loading="lazy" />
 
             <h3>Tuinaanleg</h3>
             <p>Van natuurlijk tot klassiek. Wij leggen tuinen aan volgens jouw wensen.</p>
             <a href="tuinaanleg.html" class="read-more">Lees meer →</a>
         </div>
         <div class="feature-card fade-in delay-1">
-            <img src="fotos/onderhoud5.jpg" alt="Boomwerken" class="feature-img" />
+            <img src="fotos/onderhoud5.jpg" alt="Boomwerken" class="feature-img" loading="lazy" />
 
             <h3>Tuinonderhoud</h3>
             <p>Altijd een verzorgde tuin dankzij professioneel onderhoud op maat.</p>
             <a href="tuinonderhoud.html" class="read-more">Lees meer →</a>
         </div>
         <div class="feature-card fade-in delay-2">
-            <img src="fotos/vellen.jpg" alt="Boomwerken" class="feature-img" />
+            <img src="fotos/vellen.jpg" alt="Boomwerken" class="feature-img" loading="lazy" />
             <h3>Boomwerken</h3>
             <p>Veilige snoei en verwijdering van bomen met oog voor mens en natuur.</p>
             <a href="boomwerken.html" class="read-more">Lees meer →</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Over Tuinwerken Mylemans</h2>
+                <p>Welkom bij Tuinwerken Mylemans, jouw betrouwbare partner voor professionele tuinverzorging in Vremde en omstreken. Met passie voor groen en oog voor detail transformeren we tuinen tot groene oases.</p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Vakmanschap</h3>
+                        <p>Jarenlange ervaring in tuinaanleg, onderhoud en boomverzorging</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Duurzaamheid</h3>
+                        <p>Respect voor de natuur en ecologisch verantwoord werken</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Betrouwbaarheid</h3>
+                        <p>Transparante communicatie en nakomen van afspraken</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-star"></i>
+                        <h3>Kwaliteit</h3>
+                        <p>Hoogwaardige materialen en perfecte afwerking</p>
+                    </div>
+                </div>
+                
+                <p class="about-cta">Of het nu gaat om een complete tuinaanleg, regelmatig onderhoud of professionele boomverzorging - bij Tuinwerken Mylemans bent u aan het juiste adres. We werken op maat, luisteren naar uw wensen en realiseren de tuin van uw dromen.</p>
+            </div>
         </div>
     </section>
 
@@ -282,6 +320,8 @@
         });
     </script>
 
+    </main>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-contact">
@@ -304,11 +344,81 @@
 
         <div class="footer-bottom">
             <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+            <p>BTW: BE1024903384</p>
+            <p><a href="privacy.html" style="color: #a2d149; text-decoration: underline;">Privacy Policy</a></p>
             <p class="website-credits">Website gemaakt door <a href="https://milanwouters.be" target="_blank"
                     rel="noopener">Milan Wouters</a> & <a href="https://raoulbuffels.be" target="_blank"
                     rel="noopener">Raoul Buffels</a></p>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <p>Wij gebruiken cookies om uw ervaring op onze website te verbeteren. Door verder te gaan, gaat u akkoord met ons gebruik van cookies. <a href="privacy.html">Lees meer</a></p>
+        </div>
+        <div class="cookie-consent-buttons">
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accepteren</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Weigeren</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/32474192092?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20jullie%20tuinwerken%20diensten" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Cookie Consent
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        // Check if user has already made a choice
+        window.addEventListener('DOMContentLoaded', () => {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        });
+    </script>
+
+    <script src="javascript/common.js"></script>
 
 </body>
 
