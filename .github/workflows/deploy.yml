@@ -22,4 +22,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./
-          server-dir: /domains/tuinwerkenmylemans.be/public_html/
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .idea/**
