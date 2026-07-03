@@ -43,7 +43,7 @@
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 18px;
     /* ruimte tussen links */
     margin: 0;
     padding: 0;
@@ -55,8 +55,8 @@
     color: #333;
     /* standaard kleur */
     font-weight: 600;
-    font-size: 1rem;
-    padding: 8px 12px;
+    font-size: 0.98rem;
+    padding: 8px 10px;
     border-radius: 4px;
     position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -128,8 +128,13 @@
     box-sizing: border-box;
 }
 
+.footer * {
+    box-sizing: border-box;
+}
+
 .footer-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1400px;
@@ -156,8 +161,13 @@
 .footer h3 {
     color: #a2d149;
     font-weight: 700;
+    margin-top: 0;
     margin-bottom: 12px;
     font-size: 1.2em;
+}
+
+.footer p {
+    margin: 0;
 }
 
 .footer a {
@@ -218,16 +228,19 @@
 }
 
 .website-credits {
-    font-size: 0.9em;
-    color: #888;
+    margin-top: 2px;
+    font-size: 0.92em;
+    color: #b8c8b8;
 }
 
 .website-credits a {
     color: #a2d149;
     font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     .footer-container {
         flex-wrap: wrap;
         justify-content: center;
@@ -240,6 +253,14 @@
         flex: 1 1 100%;
         text-align: center;
         min-width: auto;
+        padding: 0 20px;
+    }
+
+    .footer-social .social-list {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 auto;
     }
 
     .footer-bottom {
@@ -282,7 +303,7 @@
 }
 
 /* Responsive navbar voor mobiel */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
     .navbar {
         position: fixed;
         flex-direction: row;

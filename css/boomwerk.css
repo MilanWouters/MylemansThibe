@@ -31,17 +31,15 @@ body {
     background-color: transparent;
 }
 
-/* Background Image with Ken Burns Effect */
+/* Background Image */
 .hero.boomwerken-hero::before {
     content: "";
     position: absolute;
     inset: 0;
     /* Use a high-impact image */
-    background: url('../fotos/snoeien.jpg') center center no-repeat;
+    background: url('../fotos/web/hero-boomwerken-canopy.jpg') center center no-repeat;
     background-size: cover;
     z-index: -1;
-    /* Crazy Effect: Ken Burns Animation */
-    animation: kenBurns 20s ease-in-out infinite alternate;
 }
 
 /* Dark Overlay for Readability */
@@ -51,21 +49,6 @@ body {
     inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
     z-index: 0;
-}
-
-/* Ken Burns Keyframes */
-@keyframes kenBurns {
-    0% {
-        transform: scale(1) translate(0, 0);
-    }
-
-    50% {
-        transform: scale(1.2) translate(-20px, -10px);
-    }
-
-    100% {
-        transform: scale(1.1) translate(20px, 10px);
-    }
 }
 
 .hero.boomwerken-hero h1,
@@ -203,6 +186,10 @@ body {
 
 .animate-fade.delay-4 {
     animation-delay: 2s;
+}
+
+.animate-fade.delay-5 {
+    animation-delay: 2.5s;
 }
 
 .animate-zoom {
