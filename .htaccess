@@ -1,7 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    RewriteCond %{HTTPS} !=on [OR]
     RewriteCond %{HTTP_HOST} ^www\.tuinwerkenmylemans\.be$ [NC]
     RewriteRule ^ https://tuinwerkenmylemans.be%{REQUEST_URI} [L,R=301]
 </IfModule>
