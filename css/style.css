@@ -281,7 +281,7 @@ html {
 .hero {
     min-height: 90vh;
     /* Lighter gradient so Thibe is visible in the background */
-    background: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), url('../fotos/web/hero-boomverzorging-sharp.jpg');
+    background: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), url('../fotos/web/hero-boomwerken-canopy.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: scroll;
