@@ -1,0 +1,165 @@
+/* Aanvullende uitleg binnen de bestaande groene huisstijl. */
+.content-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    line-height: 1.75;
+}
+
+.content-section h2 {
+    color: #1b5e20;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.content-section h3 {
+    color: #2f4f2f;
+    margin: 1.25rem 0 0.5rem;
+}
+
+.content-section p,
+.content-section ul,
+.content-section ol {
+    margin-bottom: 1rem;
+}
+
+.content-section ul,
+.content-section ol {
+    padding-left: 1.5rem;
+}
+
+.content-section li {
+    margin-bottom: 0.45rem;
+}
+
+.content-section a {
+    color: #1b5e20;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.content-section a:hover {
+    color: #2e7d32;
+}
+
+.content-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin: 1.25rem 0;
+}
+
+.content-section .offerte-link {
+    display: inline-block;
+    border-radius: 30px;
+    background: #2e7d32;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.content-section .offerte-link:hover,
+.content-section .offerte-link:focus-visible {
+    background: #1b5e20;
+    color: #fff;
+}
+
+.breadcrumb {
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 0 1.5rem;
+    color: #546e5a;
+    font-size: 0.9rem;
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.breadcrumb li + li::before {
+    content: "/";
+    margin-right: 0.5rem;
+}
+
+.breadcrumb a {
+    color: #1b5e20;
+}
+
+.service-photo {
+    display: block;
+    width: min(100%, 700px);
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+}
+
+.region-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.region-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(31, 78, 31, 0.11);
+}
+
+.region-card h3 {
+    margin-top: 0;
+}
+
+.region-card ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.region-jumps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.region-card,
+.content-section [id],
+.content-section[id] {
+    scroll-margin-top: 110px;
+}
+
+.footer .werkgebied-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .region-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

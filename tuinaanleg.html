@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- SEO Meta Tags -->
-    <title>Tuinaanleg Vremde & Antwerpen | Tuinwerken Mylemans</title>
-    <meta name="description"
-        content="Professionele tuinaanleg in Vremde en regio Antwerpen. Grondvoorbereiding, gazonaanleg, beplanting en afsluitingen. Vraag een vrijblijvende offerte!">
-    <meta name="keywords"
-        content="tuinaanleg, tuin aanleggen, gazonaanleg, graszoden, beplanting, afsluitingen, hovenier, Vremde, Boechout, Antwerpen">
+    <title>Tuinaanleg Vremde en Antwerpen | Boom &amp; Tuinwerken Mylemans</title>
+    <meta name="description" content="Een tuin laten aanleggen? Grondvoorbereiding, gazonaanleg, aanplantingen en afsluitingen in de provincie Antwerpen door Boom &amp; Tuinwerken Mylemans uit Vremde.">
+
     <meta name="robots" content="index, follow">
 
     <!-- Google Site Verification -->
@@ -22,15 +20,15 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tuinwerkenmylemans.be/tuinaanleg.html">
-    <meta property="og:title" content="Tuinaanleg | Tuinwerken Mylemans">
-    <meta property="og:description" content="Professionele tuinaanleg op maat. Van grondvoorbereiding tot afwerking.">
+    <meta property="og:title" content="Tuinaanleg Vremde en Antwerpen | Boom &amp; Tuinwerken Mylemans">
+    <meta property="og:description" content="Een tuin laten aanleggen? Grondvoorbereiding, gazonaanleg, aanplantingen en afsluitingen in de provincie Antwerpen door Boom &amp; Tuinwerken Mylemans uit Vremde.">
     <meta property="og:image" content="https://tuinwerkenmylemans.be/fotos/web/hero-tuinaanleg-sharp.jpg">
 
     <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="fotos/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="fotos/favicon.ico">
-    <link rel="stylesheet" href="css/samen.css?v=20260704footer3">
+    <link rel="stylesheet" href="css/samen.css?v=20261006nav">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -62,7 +60,7 @@
             position: relative;
             height: 50vh;
             min-height: 400px;
-            background-image: url('fotos/web/hero-tuinaanleg-sharp.jpg');
+            background-image: url('fotos/web/optimized/hero-tuinaanleg-sharp-1920.webp');
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -92,7 +90,7 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             margin: 0 20px;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -163,7 +161,7 @@
             box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
         }
 
-        .service-card h3 {
+        .service-card h2 {
             color: #2e7d32;
             margin-bottom: 15px;
             font-weight: 600;
@@ -272,7 +270,7 @@
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 1rem;
             padding: 2rem 1rem;
         }
@@ -308,7 +306,7 @@
         .service-card {
             flex: 1 1 23%;
             /* 4 naast elkaar op grote schermen */
-            min-width: 250px;
+            min-width: min(250px, 100%);
             /* zorgt dat ze niet te klein worden op medium schermen */
             background: white;
             border-radius: 15px;
@@ -317,52 +315,153 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: default;
         }
+        @media (max-width: 720px) {
+            .service-card { min-width: 0; max-width: 100%; width: 100%; padding: 25px 20px; }
+            .service-card h2 { font-size: 1.4rem; overflow-wrap: anywhere; }
+        }
     </style>
 
+    <link rel="stylesheet" href="css/inhoud.css?v=20261003seo2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta property="og:locale" content="nl_BE">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://tuinwerkenmylemans.be/#bedrijf",
+            "name": "Boom & Tuinwerken Mylemans",
+            "url": "https://tuinwerkenmylemans.be/",
+            "description": "Boomverzorging, tuinonderhoud en tuinaanleg vanuit Vremde in de volledige provincie Antwerpen.",
+            "telephone": "+32474192092",
+            "email": "tuinwerken.mylemans@gmail.com",
+            "vatID": "BE1024903384",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Wommelgemsesteenweg 29",
+                "addressLocality": "Vremde",
+                "postalCode": "2531",
+                "addressRegion": "Antwerpen",
+                "addressCountry": "BE"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Provincie Antwerpen",
+                "containedInPlace": {
+                    "@type": "Country",
+                    "name": "België"
+                }
+            },
+            "image": "https://tuinwerkenmylemans.be/fotos/web/bedrijf-logo.jpg",
+            "sameAs": [
+                "https://www.facebook.com/tuinwerkenmylemans",
+                "https://www.instagram.com/tuinwerken_mylemans"
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://tuinwerkenmylemans.be/tuinaanleg.html#pagina",
+            "url": "https://tuinwerkenmylemans.be/tuinaanleg.html",
+            "name": "Tuinaanleg Vremde en Antwerpen | Boom & Tuinwerken Mylemans",
+            "description": "Een tuin laten aanleggen? Grondvoorbereiding, gazonaanleg, aanplantingen en afsluitingen in de provincie Antwerpen door Boom & Tuinwerken Mylemans uit Vremde.",
+            "inLanguage": "nl-BE",
+            "about": {
+                "@id": "https://tuinwerkenmylemans.be/#bedrijf"
+            },
+            "mainEntity": {
+                "@id": "https://tuinwerkenmylemans.be/tuinaanleg.html#dienst"
+            },
+            "breadcrumb": {
+                "@id": "https://tuinwerkenmylemans.be/tuinaanleg.html#breadcrumb"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://tuinwerkenmylemans.be/tuinaanleg.html#dienst",
+            "name": "Tuinaanleg",
+            "serviceType": "Tuinaanleg",
+            "url": "https://tuinwerkenmylemans.be/tuinaanleg.html",
+            "provider": {
+                "@id": "https://tuinwerkenmylemans.be/#bedrijf"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Provincie Antwerpen",
+                "containedInPlace": {
+                    "@type": "Country",
+                    "name": "België"
+                }
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://tuinwerkenmylemans.be/tuinaanleg.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://tuinwerkenmylemans.be/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Tuinaanleg",
+                    "item": "https://tuinwerkenmylemans.be/tuinaanleg.html"
+                }
+            ]
+        }
+    ]
+}
+    </script>
+    <link rel="preload" as="image" href="fotos/web/optimized/hero-tuinaanleg-sharp-1920.webp" type="image/webp" fetchpriority="high">
 </head>
 
 <body>
     <a href="#main-content" class="skip-to-content">Ga naar hoofdinhoud</a>
-    
+
     <div class="nav-overlay"></div>
     <nav class="navbar">
-        <a href="index.html" class="logo-link">
-            <img src="fotos/web/bedrijf-logo.jpg" alt="Tuinwerken Mylemans logo" class="logo-img" />
+        <a href="/" class="logo-link">
+            <img src="fotos/web/optimized/bedrijf-logo-320.webp" alt="Boom &amp; Tuinwerken Mylemans logo" class="logo-img" srcset="fotos/web/optimized/bedrijf-logo-320.webp 320w" sizes="90px" width="320" height="320" decoding="async" />
         </a>
-        <div class="hamburger">
+        <button class="hamburger" type="button" aria-label="Menu openen" aria-controls="nav-links" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/">Home</a></li>
             <li><a href="boomwerken.html">Boomverzorging</a></li>
             <li><a href="tuinonderhoud.html">Tuinonderhoud</a></li>
-            <li><a href="tuinaanleg.html" class="active">Tuinaanleg</a></li>
+            <li><a href="tuinaanleg.html" class="active" aria-current="page">Tuinaanleg</a></li>
             <li><a href="fotos.html">Foto's</a></li>
             <li><a href="certificaten.html">Certificaten</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <script src="javascript/navbar.js"></script>
+    <script src="javascript/navbar.js?v=20261003seo"></script>
 
 
     <!-- Hero sectie -->
     <main id="main-content">
-    <section class="hero" role="img" aria-label="Prachtige tuin achtergrondfoto - plaats hier jouw foto">
+    <section class="hero">
         <div>
-            <h1>Het creëren van uw droomtuin!</h1>
+            <h1>Tuinaanleg op maat</h1>
 
         </div>
     </section>
 
+    <nav class="breadcrumb" aria-label="Broodkruimel"><ol><li><a href="/">Home</a></li><li aria-current="page">Tuinaanleg</li></ol></nav>
     <!-- Container -->
     <div class="container">
 
         <!-- Diensten -->
         <section class="services" aria-label="Onze diensten">
             <article class="service-card" tabindex="0">
-                <h3>Grondvoorbereiding</h3>
+                <h2>Grondvoorbereiding</h2>
                 <ul>
                     <li>Spitten, frezen en egaliseren</li>
                     <li>Drainage en afwatering</li>
@@ -370,7 +469,7 @@
                 </ul>
             </article>
             <article class="service-card" tabindex="0">
-                <h3>Gazonaanleg</h3>
+                <h2>Gazonaanleg</h2>
                 <ul>
                     <li>Natuurlijk (kruiden) gazon zaaien</li>
                     <li>Graszoden leggen voor direct resultaat</li>
@@ -378,7 +477,7 @@
                 </ul>
             </article>
             <article class="service-card" tabindex="0">
-                <h3>Aanplantingen</h3>
+                <h2>Aanplantingen</h2>
                 <ul>
                     <li>Het plaatsen van aanplantingen op maat</li>
                     <li>Afwerken met boomschors of hakselhout tussen de planten</li>
@@ -386,7 +485,7 @@
             </article>
             <!-- Nieuw vakje voor Afsluitingen -->
             <article class="service-card" tabindex="0">
-                <h3>Afsluitingen</h3>
+                <h2>Afsluitingen</h2>
                 <ul>
                     <li>Afsluitingen op maat</li>
                     <li>Houten, metalen of natuurlijke afscheidingen</li>
@@ -430,21 +529,46 @@
         <!-- Fotosectie -->
         <section class="photo-strip" aria-label="Tuinwerken in beeld">
             <div class="photo-grid">
-                <img src="fotos/aanleg.jpg" alt="Tuinbeeld 1" loading="lazy" />
-                <img src="fotos/aanleg2.jpg" alt="Tuinbeeld 2" loading="lazy" />
-                <img src="fotos/aanleg3.jpg" alt="Tuinbeeld 3" loading="lazy" />
+                <img src="fotos/web/optimized/aanleg-700.webp" alt="Tuinbeeld 1" loading="lazy" srcset="fotos/web/optimized/aanleg-480.webp 480w, fotos/web/optimized/aanleg-700.webp 700w" sizes="(max-width: 768px) calc(100vw - 2rem), 600px" width="700" height="685" decoding="async" />
+                <img src="fotos/web/optimized/aanleg2-700.webp" alt="Tuinbeeld 2" loading="lazy" srcset="fotos/web/optimized/aanleg2-480.webp 480w, fotos/web/optimized/aanleg2-700.webp 700w" sizes="(max-width: 768px) calc(100vw - 2rem), 600px" width="700" height="525" decoding="async" />
+                <img src="fotos/web/optimized/aanleg3-700.webp" alt="Tuinbeeld 3" loading="lazy" srcset="fotos/web/optimized/aanleg3-480.webp 480w, fotos/web/optimized/aanleg3-700.webp 700w" sizes="(max-width: 768px) calc(100vw - 2rem), 600px" width="700" height="933" decoding="async" />
             </div>
         </section>
 
     </div>
 
+    <section class="content-section">
+        <h2>Een tuin aanleggen vanuit Vremde</h2>
+        <p>Een nieuwe tuin begint bij een bruikbare ondergrond en een invulling die bij je wensen past. Boom &amp; Tuinwerken Mylemans voert grondvoorbereiding, gazonaanleg, aanplantingen en het plaatsen van afsluitingen uit. We bespreken of je een volledige aanleg of een deel van de tuin wil aanpakken.</p>
+        <p>Voor gazonaanleg bekijken we de ondergrond en kiezen we samen tussen zaaien en graszoden. Bij aanplantingen houden we rekening met de standplaats en het gewenste onderhoud. Bestaande bomen of stronken kunnen invloed hebben op de voorbereiding: bekijk ook <a href="boomwerken.html">boomwerken</a> en <a href="stronkenfrezen.html">stronkenfrezen</a>.</p>
+        <p>Vanuit Vremde, deelgemeente van Boechout, werken we in de volledige provincie Antwerpen. Bekijk <a href="werkgebied.html">ons werkgebied en alle gemeenten</a>.</p>
+        <div class="content-actions"><a class="offerte-link" href="contact.html?dienst=tuinaanleg#contact-form">Vraag een vrijblijvende offerte aan</a><a href="tel:+32474192092">Bel +32 474 19 20 92</a></div>
+    </section>
+    <section class="content-section">
+        <h2>Van tuinplan naar aanleg</h2>
+        <ol><li><strong>Wensen en situatie:</strong> je geeft de gemeente, oppervlakte en gewenste werken door. Vermeld wat behouden moet blijven.</li><li><strong>Voorbereiding:</strong> we bekijken bereikbaarheid, grondwerk en de gewenste afwerking.</li><li><strong>Afspraken en offerte:</strong> we leggen vast welke materialen en werkzaamheden opgenomen worden.</li><li><strong>Uitvoering en onderhoud:</strong> na de aanleg bespreken we wat het gazon en de beplanting nodig hebben. Voor verdere verzorging kan je terecht bij <a href="tuinonderhoud.html">tuinonderhoud</a>.</li></ol>
+    </section>
+    <section class="content-section">
+        <h2>Wat kost tuinaanleg?</h2>
+        <p>De oppervlakte, de toestand van de bodem, het benodigde grondwerk en de gekozen materialen bepalen samen de prijs. Ook de bereikbaarheid, afvoer of aanvoer van grond, soort beplanting en uitvoering van de afsluitingen spelen mee. Beschrijf de gewenste onderdelen en je budgetkader in de aanvraag, zodat we een gerichte offerte kunnen bespreken.</p>
+    </section>
+    <section class="content-section">
+        <h2>Veelgestelde vragen over tuinaanleg</h2>
+        <h3>Kan ik ook een deel van mijn tuin laten aanleggen?</h3>
+        <p>Ja. Je kan grondvoorbereiding, een nieuw gazon, aanplantingen of afsluitingen als concrete opdracht bespreken. Vermeld welke bestaande delen je wil behouden.</p>
+        <h3>Wat is het verschil tussen gras zaaien en graszoden leggen?</h3>
+        <p>Graszoden geven meteen een bedekt oppervlak, maar vragen nog verzorging om aan te slaan. Bij zaaien groeit het gazon geleidelijk. De geschikte keuze hangt af van de ondergrond, planning en het gewenste gebruik.</p>
+        <h3>Hoe bereid ik een offerteaanvraag voor?</h3>
+        <p>Geef de gemeente, de oppervlakte en de gewenste onderdelen door. Vermeld de doorgang naar de tuin, de bestaande situatie en eventuele plannen of schetsen die je al hebt.</p>
+    </section>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <h3>Over Tuinwerken Mylemans</h3>
-                <p>Vakmanschap in tuinaanleg, tuinonderhoud en boomwerken, met oog voor detail en passie voor groen</p>
+                <h3>Over Boom &amp; Tuinwerken Mylemans</h3>
+                <p>Boomverzorging, tuinonderhoud en tuinaanleg vanuit Vremde in de volledige provincie Antwerpen.</p>
+                <a class="werkgebied-link" href="werkgebied.html">Bekijk ons werkgebied</a>
             </div>
 
             <div class="footer-contact">
@@ -465,7 +589,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
+            <p>&copy; 2025 Boom &amp; Tuinwerken Mylemans. Alle rechten voorbehouden.</p>
             <p><a href="privacy.html" style="color: #a2d149; text-decoration: underline;">Privacy Policy</a></p>
             <p class="website-credits">Website gemaakt door <a href="https://milanwouters.be" target="_blank" rel="noopener">Milan Wouters</a> en <a href="https://raoulbuffels.be" target="_blank" rel="noopener">Raoul Buffels</a></p>
         </div>

@@ -20,11 +20,11 @@ body {
     color: #fff;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(20, 50, 20, 0.72), rgba(46, 125, 50, 0.46)), url('../fotos/web/hero-boomverzorging-sharp.jpg') center center / cover no-repeat;
+    background: linear-gradient(135deg, rgba(20, 50, 20, 0.72), rgba(46, 125, 50, 0.46)), url('../fotos/web/optimized/hero-boomverzorging-sharp-1530.webp') center center / cover no-repeat;
 }
 
 .page-hero.cert-hero {
-    background: linear-gradient(135deg, rgba(20, 50, 20, 0.9), rgba(46, 125, 50, 0.62)), url('../fotos/web/hero-certificaten-sharp.jpg') center center / cover no-repeat;
+    background: linear-gradient(135deg, rgba(20, 50, 20, 0.9), rgba(46, 125, 50, 0.62)), url('../fotos/web/optimized/hero-certificaten-sharp-1600.webp') center center / cover no-repeat;
 }
 
 .page-hero-content {
@@ -100,6 +100,7 @@ body {
 
 .photo-card img {
     width: 100%;
+    height: auto;
     aspect-ratio: 4 / 3;
     display: block;
     object-fit: cover;
@@ -129,6 +130,7 @@ body {
 
 .certificate-preview img {
     width: 100%;
+    height: auto;
     display: block;
     aspect-ratio: 3 / 4;
     object-fit: contain;

@@ -34,3 +34,7 @@ jobs:
             **/.git*/**
             .github/**
             .idea/**
+            tmp/**
+            docs/**
+            scripts/**
+            nieuwefotos/**

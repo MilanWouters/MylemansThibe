@@ -1,4 +1,4 @@
-# Robots.txt voor Tuinwerken Mylemans
+# Robots.txt voor Boom & Tuinwerken Mylemans
 # https://tuinwerkenmylemans.be
 
 User-agent: *
@@ -10,3 +10,7 @@ Sitemap: https://tuinwerkenmylemans.be/sitemap.xml
 # Blokkeer alleen niet-relevante bestanden
 Disallow: /.git/
 Disallow: /.idea/
+Disallow: /tmp/
+Disallow: /docs/
+Disallow: /scripts/
+Disallow: /nieuwefotos/
