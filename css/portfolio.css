@@ -106,6 +106,14 @@ body {
     object-fit: cover;
 }
 
+.photo-card {
+    margin: 0;
+}
+
+.photo-card-klimwerk img {
+    object-position: center 25%;
+}
+
 .photo-card figcaption {
     padding: 1rem 1.1rem 1.15rem;
     color: #2f4f2f;
