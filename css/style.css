@@ -1,3 +1,58 @@
+/* Poppins by Indian Type Foundry; SIL Open Font License: fonts/poppins/OFL.txt. */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/poppins/poppins-latin-ext-300.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/poppins/poppins-latin-300.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/poppins/poppins-latin-ext-500.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/poppins/poppins-latin-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/poppins/poppins-latin-ext-700.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/poppins/poppins-latin-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Google Font */
 body {
     margin: 0;
@@ -262,14 +317,19 @@ html {
 .feature-img {
     width: 100%;
     /* Zorgt dat de afbeelding de breedte van de card vult */
-    height: 200px;
-    /* Of een hoogte die je mooi vindt */
+    height: auto;
+    aspect-ratio: 3 / 2;
+    display: block;
     object-fit: cover;
     /* Houdt de afbeelding proportioneel en vult het kader netjes */
     border-radius: 8px;
     /* Maken het iets ronder en professioneler */
     margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-img-aanleg {
+    object-position: center 65%;
 }
 
 /* Eventueel hover-effect */
@@ -281,7 +341,8 @@ html {
 .hero {
     min-height: 90vh;
     /* Lighter gradient so Thibe is visible in the background */
-    background: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), url('../fotos/web/optimized/hero-boomwerken-canopy-1536.webp');
+    background: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), url('../fotos/web/optimized/home-hero-boomverzorging-1536.webp');
+    background-image: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), image-set(url('../fotos/web/optimized/home-hero-boomverzorging-1536.avif') type('image/avif'), url('../fotos/web/optimized/home-hero-boomverzorging-1536.webp') type('image/webp'));
     background-size: cover;
     background-position: center top;
     background-attachment: scroll;
@@ -318,7 +379,7 @@ html {
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    text-transform: capitalize;
+    text-transform: none;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -739,3 +800,75 @@ html {
 }
 
 .feature-card h2 { font-size: 1.17em; margin-block: 1em; }
+
+/* Kleiner hoofdbeeld op mobiele schermen, afgestemd op de preload. */
+@media (max-width: 768px) {
+    .hero {
+        background-image: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), url('../fotos/web/optimized/home-hero-boomverzorging-mobiel-576.webp');
+        background-image: linear-gradient(135deg, rgba(15, 38, 15, 0.68), rgba(27, 94, 32, 0.48)), image-set(url('../fotos/web/optimized/home-hero-boomverzorging-mobiel-576.avif') type('image/avif'), url('../fotos/web/optimized/home-hero-boomverzorging-mobiel-576.webp') type('image/webp'));
+    }
+}
+
+/* Inline icons keep the original appearance without downloading icon fonts. */
+.site-icon {
+    display: inline-block;
+    font-style: normal;
+    line-height: 1;
+    vertical-align: -0.125em;
+}
+
+.site-icon svg {
+    display: block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.feature-card picture,
+.photo-strip picture {
+    display: block;
+    min-width: 0;
+}
+
+/* Show the main content immediately and avoid continuous repainting. */
+.hero-text,
+.hero-image,
+.feature-card.fade-in,
+.btn {
+    animation: none;
+}
+
+.feature-card.fade-in {
+    opacity: 1;
+}
+
+.hero-text .btn {
+    color: #1b5e20;
+    text-shadow: none;
+}
+
+.about-content p.about-cta,
+.about-cta a {
+    color: #fff;
+}
+
+.about-cta a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.review-source {
+    color: #666;
+}
+
+.btn-google-reviews {
+    background: #1a5fc4;
+}
+
+.btn-google-reviews:hover {
+    background: #164e9e;
+}
+
+.footer-bottom p {
+    color: #d7e3d7;
+}

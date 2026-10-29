@@ -20,6 +20,8 @@
 
 <IfModule mod_mime.c>
     AddType image/webp .webp
+    AddType image/avif .avif
+    AddType font/woff2 .woff2
 </IfModule>
 
 <IfModule mod_expires.c>
@@ -27,6 +29,8 @@
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/avif "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
     ExpiresByType image/x-icon "access plus 1 month"
     ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
